@@ -1,0 +1,11 @@
+services:
+    app:
+        container_name: django-container1
+        build:
+            context: ./learnDocker
+            dockerfile: Dockerfile
+        command: python manage.py runserver 0.0.0.0:8000
+        volumes:
+            -   ./learnDocker:/usr/src/app/
+        ports:
+            - 8001:8000
